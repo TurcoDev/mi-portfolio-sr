@@ -16,10 +16,35 @@
     </header>
     <main>
         <h1>Contacto</h1>
+        <form class="form-group" onsubmit="mostrarMensaje(event)">
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required> </textarea>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+        <div id ="mensaje-enviado" style="display:none; color:green; margin-top:10px;">
+            <h3>Mensaje enviado Correctamente..!!</h3>
+        </div>    
+       
     </main>
     <footer>
 
     </footer>
-    
+    <script>
+        function mostrarMensaje(event){
+            event.preventDefault();
+            document.getElementById("mensaje-enviado").style.display = "block";
+            document.querySelector('.form-group').reset(); 
+            setTimeout(function() {
+                
+                document.getElementById("mensaje-enviado").style.display = "none";
+            }, 3000); // Oculta el mensaje después de 3 segundos
+        }
+    </script>
 </body>
 </html>
