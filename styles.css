@@ -1,74 +1,183 @@
-html,body{
-    height: 100%;
+/* COMENTARIOS PARA QUE NO SE OLVIDEN DE QUÉ 
+                     HACE CADA PARTE DEL CSS */
+
+
+/* Hace que el html y el body ocupen toda la altura de la ventana */
+html, body {
+  height: 100%;
 }
 
-body{
-    display: flex;
-    flex-direction: column;
-    background: rgb(236, 236, 236);
-    font-family: Arial;
-    min-height: 100vh;
-    margin: 0;
+/* Configura el body como un contenedor flex vertical para lograr sticky footer */
+body {
+  display: flex; /* Usa flexbox */
+  flex-direction: column; /* Los hijos se ordenan en columna */
+  min-height: 100vh; /* El body ocupa al menos el alto total de la pantalla */
+  margin: 0; /* Saca el margen por defecto */
+  background: #f8f9fa; /* Fondo gris claro */
+  font-family: Arial, sans-serif; /* Fuente global */
 }
 
-/* ESTILO DEL -HEADER- */
-
-header{
-    background: rgb(74, 68, 68);
-    color:white;
-    padding: 20px;
+/* Estilo del encabezado */
+header {
+  background: #222; /* Fondo oscuro */
+  color: #fff; /* Texto blanco */
+  padding: 0.7em 0; /* Espaciado arriba y abajo */
 }
 
-nav{
-    text-align: center;
+/* Centra horizontalmente la barra de navegación */
+nav {
+  text-align: center;
 }
 
-nav a{
-    color: white;
-    text-decoration: none;
-    padding: 10px;
+/* Estilo de los links del menú */
+nav a {
+  color: #fff; /* Texto blanco */
+  text-decoration: none; /* Sin subrayado */
+  margin: 0 1.2em; /* Espacio horizontal entre links */
+  font-weight: bold; /* Texto en negrita */
+  font-size: 1.1em; /* Letra apenas más grande */
+  padding: 0.2em 0; /* Espacio arriba y abajo para el hover */
+  border-bottom: 2px solid transparent; /* Línea inferior invisible por defecto */
+  transition: border 0.2s, color 0.2s; /* Transición suave en color y línea */
 }
 
-nav a:hover{
-    background: rgb(51, 51, 117);
+/* Cambia color y subraya cuando el link está en hover o focus */
+nav a:hover, nav a:focus {
+  color: #90caf9; /* Azul claro */
+  border-bottom: 2px solid #90caf9; /* Línea azul debajo */
 }
 
-/* ESTILO DEL -MAIN- */
-
-main{
-    flex: 1;
+/* Centra y limita el ancho del main */
+main {
+  flex: 1; /* Ocupa todo el espacio vertical disponible */
+  max-width: 700px; /* Ancho máximo del contenido */
+  width: 95%; /* Ocupa casi todo el ancho disponible */
+  margin: 2.5em auto 1.5em auto; /* Centrado y margen arriba/abajo */
 }
 
-main h1{
-    text-align: left; 
+/* Estilo de los títulos principales */
+main h1 {
+  margin-bottom: 1.3em; /* Espacio debajo del título */
+  font-size: 2.1em; /* Tamaño grande */
+  text-align: left; /* Alineado a la izquierda */
+  font-weight: 700; /* Negrita fuerte */
+  letter-spacing: -1px; /* Letras más pegadas */
 }
 
-.foto-perfil{
-    max-width: 100%;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border: 3px solid rgb(113, 103, 103);
+/* Hace la foto de perfil circular, centrada y con sombra */
+.foto-perfil {
+  display: block; /* Se comporta como bloque */
+  max-width: 180px; /* Máximo 180px de ancho */
+  border-radius: 50%; /* La hace circular */
+  margin: 1.5em auto; /* Centrada y separada */
+  border: 3px solid #283593; /* Borde azul */
+  box-shadow: 0 2px 10px #28359320; /* Sombra azul suave */
 }
 
-/* ESTILO DE LAS CARDS */
-
-.skills-cards{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
+/* Contenedor de las cards de skills, con grid responsivo */
+.skills-cards {
+  display: grid; /* Usa CSS Grid */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Cards en columnas flexibles */
+  gap: 1.5em; /* Espacio entre cards */
+  margin-top: 1.5em; /* Espacio arriba de las cards */
 }
 
-.card{
-    background: wheat;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.12s;
-    text-align: center;
-
+/* Estilo individual de cada card de skills */
+.card {
+  background: #e3e6fd; /* Fondo azul muy claro */
+  padding: 1.5em 1em; /* Espaciado interno */
+  border-radius: 12px; /* Bordes bien redondeados */
+  box-shadow: 0 2px 8px #28359318; /* Sombra azul suave */
+  text-align: center; /* Texto centrado */
+  font-size: 1.08em; /* Letra un poco más grande */
+  font-weight: 500; /* Negrita media */
+  transition: transform 0.12s; /* Transición al hacer hover */
 }
 
-.card:hover{
-    transform: scale(1.05);
+/* Efecto “levitar” la card al pasar el mouse */
+.card:hover {
+  transform: translateY(-4px) scale(1.03);
 }
+
+/* ------------- FORMULARIO DE CONTACTO ------------- */
+
+/* Contenedor del formulario, tipo “card” */
+.form-contacto {
+  background: #f6f7fb; /* Fondo gris-azulado */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 2px 8px #28359311; /* Sombra azul muy suave */
+  padding: 2em 1.5em 1.5em 1.5em; /* Espaciado interno generoso */
+  display: flex; /* Flexbox en columna */
+  flex-direction: column;
+  gap: 1em; /* Espacio entre elementos */
+  margin-bottom: 2em; /* Espacio debajo del form */
+}
+
+/* Etiquetas del formulario */
+.form-contacto label {
+  font-weight: 600; /* Negrita */
+  margin-bottom: 0.2em; /* Pequeño espacio debajo de la etiqueta */
+}
+
+/* Campos de texto y textarea del formulario */
+.form-contacto input,
+.form-contacto textarea {
+  padding: 0.7em; /* Espaciado interno amplio */
+  border: 1.5px solid #bbb; /* Borde gris claro */
+  border-radius: 6px; /* Bordes redondeados */
+  font-size: 1em; /* Letra normal */
+  background: #fff; /* Fondo blanco */
+  transition: border-color 0.2s; /* Suaviza el cambio de color al enfocar */
+  resize: none; /* No permite redimensionar textarea */
+}
+
+/* Efecto de foco (al hacer click para escribir) */
+.form-contacto input:focus,
+.form-contacto textarea:focus {
+  outline: none; /* Saca el contorno por defecto */
+  border-color: #283593; /* Borde azul al enfocar */
+}
+
+/* Estilo del botón de enviar */
+.form-contacto button {
+  background: #283593; /* Fondo azul */
+  color: #fff; /* Texto blanco */
+  border: none; /* Sin borde exterior */
+  border-radius: 6px; /* Bordes redondeados */
+  padding: 0.9em 0; /* Espaciado interno vertical */
+  font-weight: bold; /* Texto en negrita */
+  font-size: 1.07em; /* Letra apenas más grande */
+  cursor: pointer; /* Mano al pasar el mouse */
+  transition: background 0.18s, transform 0.15s; /* Transiciones suaves */
+  margin-top: 0.5em; /* Espacio encima del botón */
+  width: 60%; /* Ocupa 60% del ancho del formulario */
+  align-self: center; /* Centra el botón horizontalmente */
+  box-shadow: 0 2px 6px #28359320; /* Sombra azul clara */
+}
+
+/* Efecto al pasar el mouse por el botón */
+.form-contacto button:hover {
+  background: #3949ab; /* Azul más claro */
+  /* transform: translateY(-2px) scale(1.03); Lo eleva un poco y agranda */
+}
+
+/* Mensaje de "enviado" debajo del botón */
+#mensaje-enviado {
+  color: #12b612; /* Verde */
+  text-align: center;
+  margin-top: 0.6em;
+  font-weight: 600;
+  font-size: 1.05em;
+}
+
+/* Estilo del pie de página */
+footer {
+  background: #222; /* Fondo oscuro */
+  color: #fff; /* Texto blanco */
+  text-align: center; /* Centrado */
+  padding: 1em 0; /* Espaciado arriba y abajo */
+  border-radius: 0 0 8px 8px; /* Bordes inferiores redondeados */
+  margin-top: auto; /* Hace que el footer baje si la página es corta */
+  font-size: 1em;
+}
+
