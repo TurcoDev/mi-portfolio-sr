@@ -1,0 +1,51 @@
+html,body{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background: rgb(236, 236, 236);
+    font-family: Arial;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* ESTILO DEL -HEADER- */
+
+header{
+    background: rgb(74, 68, 68);
+    color:white;
+    padding: 20px;
+}
+
+nav{
+    text-align: center;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a:hover{
+    background: rgb(51, 51, 117);
+}
+
+/* ESTILO DEL -MAIN- */
+
+main{
+    flex: 1;
+}
+
+main h1{
+    text-align: left; 
+}
+
+.foto-perfil{
+    max-width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 3px solid rgb(113, 103, 103);
+}
